@@ -9,17 +9,13 @@ const { mockData } = require('./mockData');
 const { findSearchItems } = require('./findSearchItems.service');
 
 // Replace with your actual MongoDB password
-const password = '6GB7DmfZfq31qVai';
-const databaseName = 'your_database_name';
+const password = '';
 
 app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect(`mongodb+srv://iliyuskeisar:${password}@funcluster.lbohy.mongodb.net/${databaseName}?retryWrites=true&w=majority`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(`mongodb+srv://iliyuskeisar:${password}@funcluster.lbohy.mongodb.net?retryWrites=true&w=majority`)
   .then(() => {
     console.log('Connected to MongoDB');
     insertMockData();
